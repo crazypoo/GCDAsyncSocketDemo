@@ -19,7 +19,10 @@
 // 定义这个常量，就可以让Masonry帮我们自动把基础数据类型的数据，自动装箱为对象类型。
 #define MAS_SHORTHAND_GLOBALS
 
+#define C0 [UIColor colorWithRed:245/255.0 green:245/255.0 blue:245/255.0 alpha:1]
 #define C1 [UIColor colorWithRed:235/255.0 green:235/255.0 blue:235/255.0 alpha:1]
+#define C2 [UIColor colorWithRed:237/255.0 green:188/255.0 blue:56/255.0 alpha:1]
+
 
 #import "MainViewController.h"
 #import <GCDAsyncSocket.h>
@@ -50,7 +53,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    self.view.backgroundColor = [UIColor colorWithRed:245/255.0 green:245/255.0 blue:245/255.0 alpha:1];
+    self.view.backgroundColor = C0;
     
     [self createUI];
     //初始化
@@ -64,7 +67,7 @@
     /*
      IP地址
     */
-    UILabel *addressLabel = [[UILabel alloc]initWithText:@"IP地址" andTextColor:[UIColor orangeColor] andFont:16.0f andNSTextAlignment:NSTextAlignmentCenter andBorderColor:C1 andBorderWidth:1.0f];
+    UILabel *addressLabel = [[UILabel alloc]initWithText:@"IP地址" andTextColor:C2 andFont:16.0f andNSTextAlignment:NSTextAlignmentCenter andBorderColor:C1 andBorderWidth:1.0f];
     [self.view addSubview:addressLabel];
     [addressLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(50 * KHeightScale);
@@ -73,7 +76,7 @@
         make.width.mas_equalTo(60 *KWidthScale);
     }];
     
-    _addressTF = [[UITextField alloc]initWithText:@"192.168." andPlaceholder:@"请输入IP地址" andTextColor:[UIColor orangeColor] andFont:20.0f andNSTextAlignment:NSTextAlignmentCenter andBorderColor:C1 andBorderWidth:1.0f];
+    _addressTF = [[UITextField alloc]initWithText:@"192.168." andPlaceholder:@"请输入IP地址" andTextColor:C2 andFont:20.0f andNSTextAlignment:NSTextAlignmentCenter andBorderColor:C1 andBorderWidth:1.0f];
     [self.view addSubview:_addressTF];
     [_addressTF mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(50 * KHeightScale);
@@ -85,7 +88,7 @@
     /*
      端口号
      */
-    UILabel *portLabel = [[UILabel alloc]initWithText:@"端口号" andTextColor:[UIColor orangeColor] andFont:16.0f andNSTextAlignment:NSTextAlignmentCenter andBorderColor:C1 andBorderWidth:1.0f];
+    UILabel *portLabel = [[UILabel alloc]initWithText:@"端口号" andTextColor:C2 andFont:16.0f andNSTextAlignment:NSTextAlignmentCenter andBorderColor:C1 andBorderWidth:1.0f];
     [self.view addSubview:portLabel];
     [portLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(addressLabel.bottom).offset(20 * KHeightScale);
@@ -94,7 +97,7 @@
         make.width.mas_equalTo(60 * KWidthScale);
     }];
     
-    _portTF = [[UITextField alloc]initWithText:@"8888" andPlaceholder:@"请输入端口号" andTextColor:[UIColor orangeColor] andFont:20.0f andNSTextAlignment:NSTextAlignmentCenter andBorderColor:C1 andBorderWidth:1.0f];
+    _portTF = [[UITextField alloc]initWithText:@"8888" andPlaceholder:@"请输入端口号" andTextColor:C2 andFont:20.0f andNSTextAlignment:NSTextAlignmentCenter andBorderColor:C1 andBorderWidth:1.0f];
     [self.view addSubview:_portTF];
     [_portTF mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(_addressTF.bottom).offset(20 * KHeightScale);
@@ -106,7 +109,7 @@
     /*
      开始连接
     */
-    UIButton *connectBtn = [[UIButton alloc]initWithText:@"开始连接" andTextColor:[UIColor orangeColor] andFont:20.0f andNSTextAlignment:NSTextAlignmentCenter andBorderColor:C1 andBorderWidth:1.0f];
+    UIButton *connectBtn = [[UIButton alloc]initWithText:@"开始连接" andTextColor:C2 andFont:20.0f andNSTextAlignment:NSTextAlignmentCenter andBorderColor:C1 andBorderWidth:1.0f];
     [self.view addSubview:connectBtn];
     [connectBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.mas_equalTo(self.view.centerX);
@@ -119,7 +122,7 @@
     /*
      发送消息
      */
-    _messageTF = [[UITextField alloc]initWithText:@"" andPlaceholder:@"请输入你要发送的消息" andTextColor:C1 andFont:16.0f andNSTextAlignment:NSTextAlignmentLeft andBorderColor:C1 andBorderWidth:1.0f];
+    _messageTF = [[UITextField alloc]initWithText:@"" andPlaceholder:@"请输入你要发送的消息" andTextColor:C2 andFont:16.0f andNSTextAlignment:NSTextAlignmentLeft andBorderColor:C1 andBorderWidth:1.0f];
     [self.view addSubview:_messageTF];
     [_messageTF mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(connectBtn.bottom).offset(20 * KHeightScale);
@@ -128,7 +131,7 @@
         make.height.mas_equalTo(30 * KHeightScale);
     }];
     
-    UIButton *messageBtn = [[UIButton alloc]initWithText:@"发送" andTextColor:[UIColor orangeColor] andFont:16.0f andNSTextAlignment:NSTextAlignmentCenter andBorderColor:C1 andBorderWidth:1.0f];
+    UIButton *messageBtn = [[UIButton alloc]initWithText:@"发送" andTextColor:C2 andFont:16.0f andNSTextAlignment:NSTextAlignmentCenter andBorderColor:C1 andBorderWidth:1.0f];
     [self.view addSubview:messageBtn];
     [messageBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(_messageTF);
@@ -141,7 +144,7 @@
     /*
      接收消息
      */
-    UIButton *receiveBtn = [[UIButton alloc]initWithText:@"接收消息" andTextColor:[UIColor orangeColor] andFont:16.0f andNSTextAlignment:NSTextAlignmentCenter andBorderColor:C1 andBorderWidth:1.0f];
+    UIButton *receiveBtn = [[UIButton alloc]initWithText:@"接收消息" andTextColor:C2 andFont:16.0f andNSTextAlignment:NSTextAlignmentCenter andBorderColor:C1 andBorderWidth:1.0f];
     [self.view addSubview:receiveBtn];
     [receiveBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.mas_equalTo(self.view.centerX);
@@ -164,6 +167,7 @@
         make.right.mas_equalTo(-20 * KWidthScale);
         make.bottom.mas_equalTo(-20 *KHeightScale);
     }];
+    _showMessageTV.textColor = C2;
 
 }
 
