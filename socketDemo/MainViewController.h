@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  MainViewController.h
 //  socketDemo
 //
 //  Created by 李自杨 on 2017/6/5.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface MainViewController : UIViewController
 
 @end
-
